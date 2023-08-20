@@ -51,10 +51,10 @@ def index():
                 with open(os.path.join(save_directory, f"{query}_{index}.jpg"), "wb") as f:
                     f.write(image_data)
 
-            # client = pymongo.MongoClient("")
-            # db = client['image_scrap']
-            # review_col = db['image_scrap_data']
-            # review_col.insert_many(img_data)
+            client = pymongo.MongoClient("mongodb+srv://sowmya:Soumyajeevan33@cluster0.nrip8qz.mongodb.net/?retryWrites=true&w=majority")
+            db = client['image_scrap']
+            review_col = db['image_scrap_data']
+            review_col.insert_many(img_data)
 
             return "image loaded"
 
